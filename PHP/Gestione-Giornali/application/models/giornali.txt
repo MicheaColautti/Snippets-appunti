@@ -1,0 +1,4 @@
+titolo;testo;tipo;redattore,data;foto;
+"Teoria del tutto";Scientifico;Bompiani;1998-04-12;sh.jpg;
+"La Biologia Applicata";Scientifico;Bompiani;2003-10-20;"micro.png";
+"Harry Potter";Fantastico;Mondadori;1998-10-31;Immagine.png;

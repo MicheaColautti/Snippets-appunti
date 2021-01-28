@@ -1,0 +1,94 @@
+Scaricare:
+- NotePad++
+- Apache: httpd-2.4.41-win64-VS16
+- PHP: php-7.3.10-Win32-VC16-x64
+- VC_vs16 x64 e x86
+
+installare firefox, notepad++, e la VcRedist con l'installer guidato.
+Creare una cartella per i domini(c:/Server/www/), chiamare le cartelle con 'nome.cognome' (luca.nervi) e al loro interno creare un file html con il 'nome.html'(luca.html).
+Riempire i file html in maniera significativa
+(per luca.html--><h1>Io sono luca</h1>)
+
+Decomprimere apache in una posizione che si vuole (c:/Server/Apache24) modificare poi il file httpd.conf nella cartella bin, inserendo il percorso della cartella Apache24, modificare anche la document root, inserendo il percorso della cartella con i domini 
+(c:/Server/web)
+aprire il cmd come amministratore, andare nella cartella bin dentro Apache24, e si digita: httpd.exe -k install
+e poi httpd -start per aprire l'Apache monitor
+cmd come admin command:
+
+ATTENZIONE:
+C:\Web\Apache24\bin\ApacheMonitor.exe
+avviarlo ad ogni inizio e ad ogni modifica del file conf (refresh ogni volta)
+
+Firefox: 
+localhost --> esce "It Works!"
+
+httpd.conf:
+ riga 37 e riga 248
+ modificato la path della cartella Apache24
+ riga 37:
+ ServerRoot "modificato la path della cartella Apache24
+ riga 248 con la nuova cartella:
+ DocumentRoot "c:/Server/web"
+ <Directory "c:/Server/web">
+
+localizzare poi il tag <IfModule dir_module>, e aggiungere i nomi di domini seguiti da '.html'(sono le pagine web nelle varie cartelle di domino)
+
+<IfModule dir_module>
+    DirectoryIndex index.html luca.html paolo.html ecc.
+</IfM module>
+
+<--ATTENZIONE: NECESSARIO APRIRE NOTEPAD++ COME ADMIN----->
+Ora dobbiamo aggiungere i virtual host, recarsi in "C:\Windows\System32\drivers\etc\hosts"
+e aggiungere i nomi di domino in questo formato:
+
+127.0.0.1 luca.nervi
+127.0.0.1 www.luca.nervi
+
+spostarsi ora in "C:\Server\Apache24\conf\extra\http-vhosts.conf", questo file serve a completare la configurazione dei virtualhost
+e aggiungere i virtual host in questo formato:
+<VirtualHost *:80>
+    ServerAdmin webmaster@luca.nervi
+    DocumentRoot "c:/Server/www/luca.nervi"
+    ServerName luca.nervi
+    ServerAlias www.luca.nervi
+    ErrorLog "logs/Virtuali/luca-error.log"
+    CustomLog "logs/Virtuali/luca-access.log" common
+</VirtualHost>
+
+
+
+--IMPORTANTE---
+Nella cartella "c:/Server/Apache24/logs" devo essere coerente e creare le cartelle che ho specificato nei percorsi "ErrorLog" e 
+"CustomLog"
+
+Ora, per verificare, digito "luca.nervi" in firefox, e dovrebbe apparire "Io sono luca".
+
+PhP:
+nuova cartella "PhP" in C:/Server/php
+estraggo i file a suo interno
+modificare il nome del file "php.ini-developmet" in "php.ini", non preoccuparsi se sparisce l'estensione
+
+
+ora in httpd.conf copio le seguenti righe:
+
+AddHandler application/x-httpd-php .php 
+AddType application/x-httpd-php .php .html  
+LoadModule php7_module "C:/Server/php/php7apache2_4.dll"  
+PHPiniDir "c:/Server/php"  
+
+
+Refreshare Apache monitor, e verificare la presenza di Php nella barra in basso.
+
+
+
+--------Mysql--------
+Creare una nuova cartella, ed eseguire l'installazione di default, al terzo passaggio cliccare su execute, e verificare che tutti i componenti siano installati, decidere una password per root.
+Usando MYSQLWorkBench ho creato i 6 DataBase per i virtuali
+
+
+--------FileZilla--------
+L'installazione dei due file zilla è semplice, una volta che entrambi sono installati, sfruttando FileZilla server si può creare un nuovo utente(pulsante con la testa in alto), schiacciare su add, dare un nome(possibilmente lo stesso del dominio).
+Andando nel pannello "Shared folder", si può assegnare a, luca per esempio, la cartella luca.nervi, in www. Assegnare quindi i permessi di full control.
+
+
+

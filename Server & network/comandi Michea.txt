@@ -1,0 +1,46 @@
+ping
+permette di pingare un host, per verificarne/verificare la connessione
+
+ifconfig
+permette di scoprire facilmente il vostro IP in LAN
+
+route
+permette di conoscere varie informazioni sulla nostra connessione (route -n == gatewy)
+
+arp
+arp serve  per visualizzare o modificare la tabella di cache ARP per un’interfaccia. 
+
+netstat
+fornisce informazioni sulle connessioni attive nel nostro TCP/IP
+
+nslookup
+fornisce l’indirizzo IP associato a un determinato dominio
+net
+net serve per consultare, impostare, aggiornare connessioni di LAN Windows
+
+pathping
+pathping combina i comandi tracer e ping,  le informazioni riportate sono suddivise in due parti, la prima è tra la sorgente e la destinazione, la seconda su tutti i passaggi intermedi tra i vari nodi della rete.
+
+nload
+nload è un comando che consente agli utenti di monitorare il traffico in entra e in uscita 
+
+iftop
+iftop misura il flusso di dati di ogni singola connessione di socket 
+
+iptraf
+iptraf è un comando interattivo e colorato per il monitor della banda. Esso permette di visualizzare le connessioni con i singoli host remoti e la quantità di dati scambiati in real time.
+
+nethogs
+nethogs è simile al comando top e mostra ogni singolo processo.
+
+bmon
+bmon (Bandwidth Monitor) è molto simile a nload e visualizza il traffico presente in tutte le interfacce di rete(output grafico)
+
+slurm
+slurm è un altro tool per il monitor della banda che mostra un grafico in ascii colorato ad indicare il traffico di rete in entrate e uscita.
+
+tcptrack
+tptrack è simile a iftop e anche lui utilizza la libreria pcap per catturare i pacchetti e calcolarne l’utilizzo di banda utilizzato da ogni connessione.
+
+vnstat
+vnstat è uno strumento differenti dagli altri, infatti è un servizio che rimane in ascolto nel sistema e colleziona le statistiche di utilizzo di banda 
