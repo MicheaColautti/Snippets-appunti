@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sensor prove Document</title>
+    <script>
+        function handleMotionEvent(event) {
+
+            var x = event.accelerationIncludingGravity.x;
+            var y = event.accelerationIncludingGravity.y;
+            var z = event.accelerationIncludingGravity.z;
+            document.getElementById("x").innerHTML = x;
+            document.getElementById("x").innerHTML = y;
+            document.getElementById("x").innerHTML = z;
+
+            // Do something awesome.
+        }
+
+        window.addEventListener("devicemotion", handleMotionEvent, true);
+    </script>
+
+
+</head>
+
+<body>
+
+    <p id="x"></p>
+    <p id="y"></p>
+    <p id="z"></p>
+</body>
+
+
+</html>
