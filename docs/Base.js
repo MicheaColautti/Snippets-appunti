@@ -1,24 +1,26 @@
-window.addEventListener("deviceorientation", getZ, true);
+window.addEventListener("devicemotion", getZ, true);
 
 
 
 function getZ() {
 
-    var z = event.alpha;
-    document.getElementById("z").innerHTML = z;
-    console.log(z);
+    var x = event.acceleration.x;
+    var y = event.acceleration.y;
+    var z = event.acceleration.z;
+
+    console.log("X:" + x);
+    console.log("Y:" + y);
+    console.log("Z:" + z);
     //alert(event.acceleration.z);
 }
 
 function requestPermission() {
     if (typeof(DeviceMotionEvent) !== "undefined" && typeof(DeviceMotionEvent.requestPermission) === "function") {
-        // (optional) Do something before API request prompt.
         DeviceMotionEvent.requestPermission()
             .then(response => {
-                // (optional) Do something after API prompt dismissed.
                 if (response == "granted") {
                     window.addEventListener("devicemotion", (e) => {
-                        // do something for 'e' here.
+                        console.log("ZZZZZZZ:" + e.acceleration.z)
                     })
                 }
             })
