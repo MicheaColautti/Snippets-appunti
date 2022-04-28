@@ -4,9 +4,8 @@ window.addEventListener("devicemotion", getZ, true);
 
 function getZ() {
 
-    alert("MAIUSC: " + Event)
-    alert("tre: " + event.acceleration);
-    alert("quattro: " + event.acceleration.z);
+    var z = event.acceleration.z;
+    document.getElementById("z").innerHTML = z;
     //alert(event.acceleration.z);
 }
 
