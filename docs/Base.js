@@ -1,10 +1,10 @@
-window.addEventListener("devicemotion", getZ, true);
+window.addEventListener("deviceorientation", getZ, true);
 
 
 
 function getZ() {
 
-    var z = event.acceleration.z;
+    var z = event.alpha;
     document.getElementById("z").innerHTML = z;
     console.log(z);
     //alert(event.acceleration.z);
