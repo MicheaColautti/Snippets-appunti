@@ -1,16 +1,10 @@
-window.addEventListener("devicemotion", handleMotion, true);
+window.addEventListener("devicemotion", getZ, true);
 
-function handleMotion(event) {
-    var acc = event.acceleration.z;
-    document.getElementById("test").innerHTML = acc;
-    alert(acc);
 
-}
 
 function getZ() {
-    alert("uno");
-    alert("due: " + event);
-    alert("MAIUSC: " + Event.acceleration.z)
+
+    alert("MAIUSC: " + Event)
     alert("tre: " + event.acceleration);
     alert("quattro: " + event.acceleration.z);
     //alert(event.acceleration.z);
