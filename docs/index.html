@@ -5,19 +5,13 @@
     <meta charset="UTF-8">
     <title>Sensor prove Document</title>
     <script>
-        function handleMotionEvent(event) {
+        window.addEventListener("devicemotion", handleMotion, true);
 
-            var x = event.accelerationIncludingGravity.x;
-            var y = event.accelerationIncludingGravity.y;
-            var z = event.accelerationIncludingGravity.z;
-            document.getElementById("x").innerHTML = x;
-            document.getElementById("x").innerHTML = y;
-            document.getElementById("x").innerHTML = z;
-
-            // Do something awesome.
+        function handleMotion(event) {
+            alert("null");
+            var acc = event.acceleration.z;
+            alert(acc);
         }
-
-        window.addEventListener("devicemotion", handleMotionEvent, true);
     </script>
 
 
@@ -25,9 +19,9 @@
 
 <body>
 
-    <p id="x"></p>
-    <p id="y"></p>
-    <p id="z"></p>
+    <p id="x">x</p>
+    <p id="y">y</p>
+    <p id="z">z</p>
 </body>
 
 
