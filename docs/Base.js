@@ -8,7 +8,9 @@ function handleMotion(event) {
 }
 
 function getZ() {
-
-
-    alert(event.acceleration.z);
+    alert("cazzinculo");
+    alert("succhiamelo: " + event);
+    alert("succhiamelo: " + event.acceleration);
+    alert("succhiamelo: " + event.acceleration.z);
+    //alert(event.acceleration.z);
 }
