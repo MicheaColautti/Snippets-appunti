@@ -6,6 +6,7 @@ function getZ() {
 
     var z = event.acceleration.z;
     document.getElementById("z").innerHTML = z;
+    console.log(z);
     //alert(event.acceleration.z);
 }
 
