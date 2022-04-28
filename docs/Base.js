@@ -10,7 +10,7 @@ function getZ() {
     //alert(event.acceleration.z);
 }
 
-function permission() {
+function requestPermission() {
     if (typeof(DeviceMotionEvent) !== "undefined" && typeof(DeviceMotionEvent.requestPermission) === "function") {
         // (optional) Do something before API request prompt.
         DeviceMotionEvent.requestPermission()
@@ -27,5 +27,3 @@ function permission() {
         alert("DeviceMotionEvent is not defined");
     }
 }
-const btn = document.getElementById("request");
-btn.addEventListener("click", permission);
